@@ -9,7 +9,7 @@ namespace Practical8.Employee
 {
     internal class PermenantFunction
     {
-        public static void Permenant()
+        public static void PermenantEmployee(Employees employees)
         {
             PermenantEmployee permenantEmployee = new PermenantEmployee();
             Trade trade = new Trade();
@@ -19,10 +19,10 @@ namespace Practical8.Employee
             switch (chose)
             {
                 case 1:
-                    Console.WriteLine($"Employee Name: {Employees.name}, Salary: {Employees.salary} & Employee Type: Permanent Employee");
+                    Console.WriteLine($"Employee Name: {employees.name}, Salary: {employees.salary} & Employee Type: Permanent Employee");
                     break;
                 case 2:
-                    Console.WriteLine(permenantEmployee.CalculateBonus(Employees.salary));
+                    Console.WriteLine(permenantEmployee.CalculateBonus(employees.salary));
                     break;
                 case 3:
                     Console.WriteLine("Enter no of trade shares:");

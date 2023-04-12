@@ -8,7 +8,7 @@ namespace Practical8.Customer
 {
     internal sealed class Withdraw : Customers
     {
-        public long WithdrawAmount(long balance, int amount)
+        public decimal WithdrawAmount(decimal balance, decimal amount)
         {
             return balance - amount;
         }

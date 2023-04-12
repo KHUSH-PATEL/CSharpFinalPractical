@@ -8,8 +8,8 @@ namespace Practical8.Customer
 {
     public class Customers
     {
-        public static string Name { get; set; }
-        public static long AccountNumber { get; set; }
-        public static long BankBalance { get; set; }
+        public string Name { get; set; }
+        public long AccountNumber { get; set; }
+        public decimal BankBalance { get; set; }
     }
 }

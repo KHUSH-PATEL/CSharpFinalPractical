@@ -16,14 +16,20 @@ namespace Practical8.Customer
         {
             try
             {
+                Enterdetail:
                 Console.WriteLine("Enter Loan Amount: ");
-                double P = Convert.ToInt32(Console.ReadLine());
+                double Principal = Convert.ToInt32(Console.ReadLine());               
                 Console.WriteLine("Enter Annual Rate of interest: ");
-                double R = Convert.ToInt32(Console.ReadLine());
-                R = R / 100;
+                double Rate = Convert.ToInt32(Console.ReadLine());
+                Rate = Rate / 100;
                 Console.WriteLine("Enter Total number of years: ");
-                double N = Convert.ToInt32(Console.ReadLine());
-                double Interest = (P * R) / N;
+                double year = Convert.ToInt32(Console.ReadLine());
+                if (Principal < 0 || Rate < 0 || year < 0)
+                {
+                    Console.WriteLine("Error: Value cant be Negative");
+                    goto Enterdetail;
+                }
+                double Interest = (Principal * Rate) / year;
 
                 return Interest;
             }

@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace Practical8.Customer
 {
-    internal class CustomerFunction : GetData
+    internal class CustomerFeatures : GetData
     {
-        public static void Functions()
+        public static void CustomerFunctions(Customers customers)
         {
             Withdraw withdraw = new Withdraw();
             Deposit deposit = new Deposit();
             Loan loan = new Loan();
-            Bonus bonus = new Bonus();
 
             Console.WriteLine("Choose your Option");
             try
@@ -23,27 +22,27 @@ namespace Practical8.Customer
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine($"Name: {Customers.Name}, Account Number: {Customers.AccountNumber} & Bank Balance: {Customers.BankBalance}");
+                        Console.WriteLine($"Name: {customers.Name}, Account Number: {customers.AccountNumber} & Bank Balance: {customers.BankBalance}");
                         break;
                     case 2:
                         Console.WriteLine("Choose Amount to deposit");
-                        int temp = Convert.ToInt32(Console.ReadLine());
-                        GetData.displayMessage();
-                        Console.WriteLine($"New available Balance is: {deposit.DepositAmount(Customers.BankBalance, temp)}");
+                        decimal temp = Convert.ToDecimal(Console.ReadLine());
+                        GetData.DisplayTransactionMessage();
+                        Console.WriteLine($"New available Balance is: {deposit.DepositAmount(customers.BankBalance, temp)}");
                         break;
                     case 3:
                         Console.WriteLine("Choose Amount to withdraw");
-                        int x = Convert.ToInt32(Console.ReadLine());
+                        decimal x = Convert.ToDecimal(Console.ReadLine());
                         try
                         {
-                            if (Customers.BankBalance > x)
+                            if (customers.BankBalance > x)
                             {
-                                GetData.displayMessage();
-                                Console.WriteLine($"New available Balance is: {withdraw.WithdrawAmount(Customers.BankBalance, x)}");
+                                GetData.DisplayTransactionMessage();
+                                Console.WriteLine($"New available Balance is: {withdraw.WithdrawAmount(customers.BankBalance, x)}");
                             }
                             else
                             {
-                                throw new Exception("Transaction In-completed. Not enough bank balance!");
+                                Console.WriteLine("Error: Transaction In-completed. Not enough bank balance!");
                             }
                         }
                         catch (Exception ex)

@@ -8,7 +8,7 @@ namespace Practical8.Customer
 {
     internal sealed class Deposit : Customers
     {
-        public long DepositAmount(long balance, int amount)
+        public decimal DepositAmount(decimal balance, decimal amount)
         {
             return balance + amount;
         }

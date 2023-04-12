@@ -18,20 +18,28 @@ namespace Practical8
                 "\n 3 - Temporary Employee "
             );
         }
-        public static void displayMessage()
+        public static void DisplayTransactionMessage()
         {
             Console.WriteLine("\n===========Transaction Completed===========");
         }
-        public static void GetCustomer()
+        public static void GetCustomer(Customers customers)
         {
             try
             {
+                EnterDetail:
                 Console.WriteLine("Enter Customer Name: ");
-                Customers.Name = Console.ReadLine();
+                customers.Name = Console.ReadLine();
+                bool isNumeric = int.TryParse(customers.Name, out int value);
+                if( isNumeric )
+                {
+                    Console.WriteLine("Error: Invalid name.");
+                    goto EnterDetail;
+                }
                 Console.WriteLine("Enter your Account number: ");
-                Customers.AccountNumber = Convert.ToInt32(Console.ReadLine());
+                customers.AccountNumber = Convert.ToInt32(Console.ReadLine());
+                
                 Console.WriteLine("Enter your Bank Balance: ");
-                Customers.BankBalance = Convert.ToInt32(Console.ReadLine());
+                customers.BankBalance = Convert.ToDecimal(Console.ReadLine());
 
 
                 Console.WriteLine("Enter your choice from: " +
@@ -51,14 +59,21 @@ namespace Practical8
             }
             
         }
-        public static void GetEmployee()
+        public static void GetEmployee(Employees employees)
         {
             try
             {
+                EnterDetail:
                 Console.WriteLine("Enter Employee Name: ");
-                Employees.name = Console.ReadLine();
+                employees.name = Console.ReadLine();
+                bool isNumeric = int.TryParse(employees.name, out int value);
+                if (isNumeric)
+                {
+                    Console.WriteLine("Error: Invalid name.");
+                    goto EnterDetail;
+                }
                 Console.WriteLine("Enter your Salary: ");
-                Employees.salary = Convert.ToInt32(Console.ReadLine());
+                employees.salary = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Enter your choice from: " +
                     "\n 1 - Display the Name, Salary & Employee Type " +

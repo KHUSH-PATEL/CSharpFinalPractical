@@ -5,9 +5,10 @@ namespace Practical8
 {
     class Program
     {
-        public static void Main()
+        public static void Main() 
         {
-
+            Customers customers = new Customers();
+            Employees employees = new Employees();
             GetData.MainOption();
             try
             {
@@ -15,18 +16,18 @@ namespace Practical8
                 switch (select)
                 {
                     case 1:
-                        GetData.GetCustomer();
-                        CustomerFunction.Functions();
+                        GetData.GetCustomer(customers);
+                        CustomerFeatures.CustomerFunctions(customers);
                         break;
 
                     case 2:
-                        GetData.GetEmployee();
-                        PermenantFunction.Permenant();
+                        GetData.GetEmployee(employees);
+                        PermenantFunction.PermenantEmployee(employees);
                         break;
 
                     case 3:
-                        GetData.GetEmployee();
-                        TemporaryFunction.Temporary();
+                        GetData.GetEmployee(employees);
+                        TemporaryFunction.TemporaryEmployee(employees);
                         break;
                     default:
                         Console.WriteLine("Please enter correct choice.");

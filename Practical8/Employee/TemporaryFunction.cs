@@ -9,7 +9,7 @@ namespace Practical8.Employee
 {
     internal class TemporaryFunction
     {
-        public static void Temporary()
+        public static void TemporaryEmployee(Employees employees)
         {
             TemporaryEmployee temporaryEmployee = new TemporaryEmployee();
             Trade trade = new Trade();
@@ -18,10 +18,10 @@ namespace Practical8.Employee
             switch (select2)
             {
                 case 1:
-                    Console.WriteLine($"Employee Name: {Employees.name}, Salary: {Employees.salary} & Employee Type: Temporary Employee");
+                    Console.WriteLine($"Employee Name: {employees.name}, Salary: {employees.salary} & Employee Type: Temporary Employee");
                     break;
                 case 2:
-                    Console.WriteLine(temporaryEmployee.CalculateBonus(Employees.salary));
+                    Console.WriteLine(temporaryEmployee.CalculateBonus(employees.salary));
                     break;
                 case 3:
                     Console.WriteLine("Enter no of trade shares:");

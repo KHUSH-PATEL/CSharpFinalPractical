@@ -8,9 +8,9 @@ namespace Practical8.Employee
 {
     public class Employees
     {
-        public static string name { get; set; }
-        public static long salary { get; set; }
-        public static string employeeType { get; set; }
+        public string name { get; set; }
+        public decimal salary { get; set; }
+        public string employeeType { get; set; }
         
     }
 }
