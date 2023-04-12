@@ -14,10 +14,10 @@ namespace Practical4
         AvgMarks avgMarks = new AvgMarks();
         Grade grade = new Grade();
   
-        public void Output()
+        public void Output(Student student)
         {
             string select = string.Empty;
-            decimal avg = avgMarks.CalculateAverageMarks();
+            decimal avg = avgMarks.CalculateAverageMarks(student);
 
             do
             {
@@ -26,24 +26,24 @@ namespace Practical4
                 switch (choice)
                 {
                     case (int)Student.Options.Aggregate:
-                        Console.WriteLine($"Student name is {Student.Name} and Average Marks is {avg}");
-                        select = display.Continue();
+                        Console.WriteLine($"Student name is {student.Name} and Average Marks is {avg}");
+                        select = display.WantToContinue();
                         break;
                     case (int)Student.Options.MinMark:
-                        Console.WriteLine($"Minimum Marks is {Student.Marks.Min()}");
-                        select = display.Continue();
+                        Console.WriteLine($"Minimum Marks is {student.Marks.Min()}");
+                        select = display.WantToContinue();
                         break;
                     case (int)Student.Options.MaximumMark:
-                        Console.WriteLine($"Maximum Marks is {Student.Marks.Max()}");
-                        select = display.Continue();
+                        Console.WriteLine($"Maximum Marks is {student.Marks.Max()}");
+                        select = display.WantToContinue();
                         break;
                     case (int)Student.Options.Grade:
                         Console.WriteLine(grade.CalculateGrade((int)avg));
-                        select = display.Continue();
+                        select = display.WantToContinue();
                         break;
                     default:
                         Console.WriteLine("Wrong option chosen");
-                        select = display.Continue();
+                        select = display.WantToContinue();
                         break;
                 }
             } while (select.ToLower() == "yes");

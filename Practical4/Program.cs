@@ -9,23 +9,25 @@ namespace Practical4
         {    
             DisplayOnScreen display = new DisplayOnScreen();
             Result result = new Result();
-           
+            Student student = new Student();
             try
             {
+                EnterName:
                 Console.WriteLine("Enter Student name : ");
-                Student.Name = Console.ReadLine();
-                var isNumeric = int.TryParse(Student.Name, out int n);
+                student.Name = Console.ReadLine();
+                var isNumeric = int.TryParse(student.Name, out int n);
                 if (isNumeric)
                 {
-                    throw new Exception("Invalid Name!");
+                    Console.WriteLine("Error: Invalid Name!");
+                    goto EnterName;
                 }
-                Console.WriteLine($"Enter Marks for {Student.Name} : ");
+                Console.WriteLine($"Enter Marks for {student.Name} : ");
                 for (int i = 0; i < 5; i++)
                 {
-                    Student.Marks[i] = Convert.ToInt32(Console.ReadLine());
+                    student.Marks[i] = Convert.ToInt32(Console.ReadLine());
                 }
                 display.Options();
-                result.Output();
+                result.Output(student);
             }
             catch (Exception ex)
             {

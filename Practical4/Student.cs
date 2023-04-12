@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practical4;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace Practical4
 {
     public class Student
     {
-        public static string Name;
-        public static decimal[] Marks = new decimal[5];
-        public static decimal AverageMarks;
+        public string Name;
+        public decimal[] Marks = new decimal[5];
+        public decimal AverageMarks;
         public enum Options
         {
             Aggregate = 1,

@@ -18,7 +18,7 @@ namespace Practical4
                 "\n 4 - Grade: Display final grade based on Average marks of the student"
             );
         }
-        public string Continue()
+        public string WantToContinue()
         {
             string choose = string.Empty;
             Console.WriteLine("Want to continue ? Yes or No");

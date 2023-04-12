@@ -8,13 +8,13 @@ namespace Practical4
 {
     internal class AvgMarks : Student
     {
-        public decimal CalculateAverageMarks()
+        public decimal CalculateAverageMarks(Student student)
         {
-            for (int i = 0; i < Marks.Length; i++)
+            for (int i = 0; i < student.Marks.Length; i++)
             {
-                AverageMarks += Marks[i];
+                student.AverageMarks += student.Marks[i];
             }
-            return AverageMarks / 5;
+            return student.AverageMarks / 5;
         }
     }
 }
